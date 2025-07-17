@@ -178,7 +178,6 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: var(--gold-gradient);
     transition: var(--transition-fast);
     z-index: -1;
 }
@@ -190,7 +189,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-black);
+    color: orange;
     transform: translateY(-2px);
 }
 
