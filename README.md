@@ -1,5 +1,8 @@
 # Central de Procedimentos Efaseg
 
+# Link para o DKGuia
+https://joaobosco25.github.io/DKGuia/
+
 ## Descrição
 
 Website informativo e didático que centraliza todos os procedimentos operacionais padrão (POPs) da Efaseg, incluindo vídeos informativos do sistema DKSoft. O site foi desenvolvido com foco na usabilidade, design moderno e funcionalidade de busca inteligente.
