@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Procedimentos Efaseg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/efaseg_logo.jpg" alt="Efaseg Logo" class="logo-img">
+                    <h1 class="logo-text">Efaseg</h1>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active">Início</a></li>
+                        <li><a href="#procedures" class="nav-link">Procedimentos</a></li>
+                        <li><a href="videos.html" class="nav-link">Vídeos</a></li>
+                        <li><a href="#search" class="nav-link">Buscar</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Central de Procedimentos Efaseg</h1>
+                    <p class="hero-subtitle">Guia completo de procedimentos operacionais padronizados</p>
+                    <div class="search-container" id="search">
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Busque por procedimentos, palavras-chave ou instruções...">
+                            <button class="search-btn" id="searchBtn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="procedures" class="procedures">
+            <div class="container">
+                <h2 class="section-title">Procedimentos Operacionais Padrão</h2>
+                <div class="procedures-grid">
+                    <div class="procedure-card" data-procedure="protocolo-atendimento">
+                        <div class="card-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3 class="card-title">POP 3.1 - Protocolo de Atendimento</h3>
+                        <p class="card-description">Processo completo de matrícula de alunos em cursos de segurança privada, desde o primeiro contato até a confirmação definitiva.</p>
+                        <a href="protocolo-atendimento.html" class="card-link">
+                            Ver Procedimento <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="procedure-card" data-procedure="controle-produtos">
+                        <div class="card-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h3 class="card-title">POP 3.2 - Controle de Produtos</h3>
+                        <p class="card-description">Gestão de estoque, cadastro, movimentação e distribuição de todos os itens físicos utilizados pela instituição.</p>
+                        <a href="controle-produtos.html" class="card-link">
+                            Ver Procedimento <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="procedure-card" data-procedure="controle-financeiro">
+                        <div class="card-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3 class="card-title">POP 3.3 - Controle Financeiro</h3>
+                        <p class="card-description">Registro, acompanhamento e conferência de todas as movimentações monetárias, incluindo contas a pagar e receber.</p>
+                        <a href="controle-financeiro.html" class="card-link">
+                            Ver Procedimento <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="procedure-card" data-procedure="pacotes-modulos">
+                        <div class="card-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="card-title">POP 3.4 - Pacotes, Módulos e Apostilas</h3>
+                        <p class="card-description">Estruturação curricular e comercial através de pacotes que reúnem módulos com base na matriz pedagógica.</p>
+                        <a href="pacotes-modulos.html" class="card-link">
+                            Ver Procedimento <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="procedure-card" data-procedure="controle-turmas">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="card-title">POP 3.5 - Controle de Turmas</h3>
+                        <p class="card-description">Gestão operacional de cursos, desde a criação da turma até aplicação de módulos e controle de frequência.</p>
+                        <a href="controle-turmas.html" class="card-link">
+                            Ver Procedimento <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="procedure-card" data-procedure="videos">
+                        <div class="card-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h3 class="card-title">Vídeos Informativos</h3>
+                        <p class="card-description">Tutoriais em vídeo do sistema DKSoft com instruções passo a passo para diversas funcionalidades.</p>
+                        <a href="videos.html" class="card-link">
+                            Ver Vídeos <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Efaseg</h3>
+                    <p>Central de Procedimentos Operacionais</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#procedures">Procedimentos</a></li>
+                        <li><a href="videos.html">Vídeos</a></li>
+                        <li><a href="#search">Buscar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Para dúvidas sobre os procedimentos, consulte o suporte técnico.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Efaseg. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
+
