@@ -1,0 +1,458 @@
+/* CSS específico para página de vídeos */
+
+.videos-main {
+    padding-top: 100px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Header dos vídeos */
+.videos-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: var(--primary-white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp var(--transition-medium);
+}
+
+.videos-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gold-gradient);
+}
+
+.videos-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--gold-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.videos-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s linear infinite;
+}
+
+.videos-icon i {
+    font-size: 3rem;
+    color: var(--primary-black);
+}
+
+.videos-info {
+    flex: 1;
+}
+
+.videos-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    color: var(--primary-black);
+    margin-bottom: 1rem;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.videos-subtitle {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Grid de vídeos */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-card {
+    background: var(--primary-white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-fast);
+    position: relative;
+    animation: fadeInUp var(--transition-medium);
+    animation-fill-mode: both;
+}
+
+.video-card:nth-child(1) { animation-delay: 0.1s; }
+.video-card:nth-child(2) { animation-delay: 0.2s; }
+.video-card:nth-child(3) { animation-delay: 0.3s; }
+.video-card:nth-child(4) { animation-delay: 0.4s; }
+.video-card:nth-child(5) { animation-delay: 0.5s; }
+.video-card:nth-child(6) { animation-delay: 0.6s; }
+.video-card:nth-child(7) { animation-delay: 0.7s; }
+.video-card:nth-child(8) { animation-delay: 0.8s; }
+.video-card:nth-child(9) { animation-delay: 0.9s; }
+.video-card:nth-child(10) { animation-delay: 1.0s; }
+.video-card:nth-child(11) { animation-delay: 1.1s; }
+.video-card:nth-child(12) { animation-delay: 1.2s; }
+
+.video-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gold-gradient);
+    transform: scaleX(0);
+    transition: var(--transition-fast);
+}
+
+.video-card:hover::before {
+    transform: scaleX(1);
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+/* Thumbnail do vídeo */
+.video-thumbnail {
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary-black) 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.video-thumbnail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23FFD700" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+}
+
+.video-thumbnail i {
+    font-size: 4rem;
+    color: var(--primary-gold);
+    z-index: 2;
+    position: relative;
+    transition: var(--transition-fast);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 215, 0, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-fast);
+    z-index: 3;
+}
+
+.play-overlay i {
+    font-size: 2rem;
+    color: var(--primary-black);
+    margin-left: 5px; /* Ajuste visual para centralizar o ícone play */
+}
+
+.video-thumbnail:hover .play-overlay {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-thumbnail:hover i:not(.play-overlay i) {
+    transform: scale(0.8);
+    opacity: 0.5;
+}
+
+/* Conteúdo do vídeo */
+.video-content {
+    padding: 1.5rem;
+}
+
+.video-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-black);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    transition: var(--transition-fast);
+}
+
+.video-card:hover .video-title {
+    color: var(--primary-gold);
+}
+
+.video-description {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Tags dos vídeos */
+.video-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--primary-black);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transition: var(--transition-fast);
+}
+
+.tag:hover {
+    background: var(--primary-gold);
+    color: var(--primary-black);
+    transform: translateY(-2px);
+}
+
+/* Efeitos especiais */
+@keyframes videoCardPulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.2);
+    }
+}
+
+.video-card:hover {
+    animation: videoCardPulse 2s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .videos-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .videos-title {
+        font-size: 2rem;
+    }
+
+    .videos-subtitle {
+        font-size: 1rem;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .video-card {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    .video-thumbnail {
+        height: 180px;
+    }
+
+    .video-thumbnail i {
+        font-size: 3rem;
+    }
+
+    .play-overlay {
+        width: 60px;
+        height: 60px;
+    }
+
+    .play-overlay i {
+        font-size: 1.5rem;
+    }
+
+    .video-content {
+        padding: 1rem;
+    }
+
+    .video-title {
+        font-size: 1.1rem;
+    }
+
+    .video-description {
+        font-size: 0.9rem;
+        -webkit-line-clamp: 3;
+    }
+}
+
+@media (max-width: 480px) {
+    .videos-main {
+        padding-top: 80px;
+    }
+
+    .videos-header {
+        padding: 1.5rem;
+    }
+
+    .videos-title {
+        font-size: 1.8rem;
+    }
+
+    .video-thumbnail {
+        height: 160px;
+    }
+
+    .video-thumbnail i {
+        font-size: 2.5rem;
+    }
+
+    .video-content {
+        padding: 1rem;
+    }
+
+    .video-title {
+        font-size: 1rem;
+    }
+
+    .tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+    }
+}
+
+/* Animações adicionais */
+@keyframes thumbnailGlow {
+    0%, 100% {
+        box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.1);
+    }
+    50% {
+        box-shadow: inset 0 0 30px rgba(255, 215, 0, 0.3);
+    }
+}
+
+.video-thumbnail:hover {
+    animation: thumbnailGlow 2s ease-in-out infinite;
+}
+
+/* Efeito de loading para thumbnails */
+.video-thumbnail.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Tooltip para tags */
+.tag {
+    position: relative;
+}
+
+.tag::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-black);
+    color: var(--primary-white);
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-fast);
+    z-index: 1000;
+}
+
+.tag:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* Indicador de categoria */
+.video-card::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    background: var(--primary-gold);
+    border-radius: 50%;
+    opacity: 0.8;
+    z-index: 4;
+}
+
+/* Efeito de ondulação ao clicar */
+.video-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 215, 0, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: 1;
+}
+
+.video-card:active::before {
+    width: 300px;
+    height: 300px;
+}
+
